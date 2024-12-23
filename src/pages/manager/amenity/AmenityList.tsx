@@ -13,6 +13,7 @@ const AmenityList = () => {
     const [size, setSize] = useState<number>(5);
     const [pageLimit, setPageLimit] = useState<number>(3);
     const [currentPage, setCurrentPage] = useState<number>(0);
+    const [selectedItem, setSelectedItem] = useState<any>({});
 
     useEffect(() => {
         searchData();
@@ -41,6 +42,7 @@ const AmenityList = () => {
 
     const onCreate = () => {
         setIsShowDetail(true);
+        setSelectedItem(null);
 
     };
 
@@ -56,6 +58,7 @@ const AmenityList = () => {
 
     const onEdit = (item: any) => {
         setIsShowDetail(true);
+        setSelectedItem(item);
     }
 
     const onDelete = async (item: any) => {
@@ -193,7 +196,7 @@ const AmenityList = () => {
             </div>
 
             {/* Form Details - Edit/Create Amenity */}
-            {isShowDetail && <AmenityDetail />}
+            {isShowDetail && <AmenityDetail item={selectedItem} />}
         </section>
     );
 }

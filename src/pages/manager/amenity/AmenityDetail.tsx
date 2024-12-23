@@ -2,8 +2,10 @@ import { faEraser, faSave } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect } from "react";
 
-const AmenityDetail = () => {
+const AmenityDetail = ({item}:{item:any}) => {
     useEffect(() => {
+        console.log(item);
+        
     }, []);
 
     const onSubmit = (event: any) => {
