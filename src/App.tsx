@@ -6,6 +6,7 @@ import Contact from './pages/Contact';
 import CustomerLayout from './shared/layouts/CustomerLayout';
 import ManagerLayout from './shared/layouts/ManagerLayout';
 import Dashboard from './pages/manager/Dashboard';
+import AmenityList from './pages/manager/amenity/AmenityList';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
 
         {/* Admin Layout */}
         <Route path="/manager/dashboard" element={<ManagerLayout><Dashboard /></ManagerLayout>} />
+        <Route path="/manager/amenities" element={<ManagerLayout><AmenityList /></ManagerLayout>} />
       </Routes>
     </BrowserRouter>
   )
