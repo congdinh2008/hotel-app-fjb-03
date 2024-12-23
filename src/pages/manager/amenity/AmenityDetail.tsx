@@ -1,6 +1,6 @@
-import { faEdit, faEraser, faPlus, faSave, faSearch, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faEraser, faSave } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const AmenityDetail = () => {
     useEffect(() => {
