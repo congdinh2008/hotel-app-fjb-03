@@ -1,9 +1,11 @@
 import { faEdit, faEraser, faPlus, faSearch, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
+import AmenityDetail from "./AmenityDetail";
 
 const AmenityList = () => {
     const [data, setData] = useState<any[]>([]);
+    const [isShowDetail, setIsShowDetail] = useState<boolean>(false);
 
     useEffect(() => {
         searchData();
@@ -20,7 +22,7 @@ const AmenityList = () => {
     };
 
     const onCreate = () => {
-        console.log('Create new amenity');
+        setIsShowDetail(true);
 
     };
 
@@ -29,7 +31,7 @@ const AmenityList = () => {
     };
 
     const onEdit = (item: any) => {
-        console.log('Edit amenity', item);
+        setIsShowDetail(true);
     }
 
     const onDelete = async (item: any) => {
@@ -73,7 +75,7 @@ const AmenityList = () => {
             </div>
 
             {/* Table List Data */}
-            <div className="card border border-slate-300 rounded-md">
+            <div className="card border border-slate-300 rounded-md my-3">
                 <div className="card-body border-y border-slate-300 p-3">
                     <table className="w-full">
                         <thead>
@@ -109,7 +111,7 @@ const AmenityList = () => {
             </div>
 
             {/* Form Details - Edit/Create Amenity */}
-            <div>Show Detail</div>
+            {isShowDetail && <AmenityDetail />}
         </section>
     );
 }
